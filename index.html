@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LofiMusic</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="music-box" aria-describedby="Caixa de Música">
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <img src="assets/girl2.svg" alt="" />
+        </div>
+        <div class="music-box__progress-container border-radius-progress">
+          <div class="music-box__progress border-radius-progress"></div>
+        </div>
+
+        <div class="d-flex p-0 mt-3 align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <img
+              id="imageMusic"
+              src="assets/image-music.svg"
+              alt="Imagem da Música"
+            />
+            <p id="titleMusic" class="m-0 ms-2">Lofi Music-Relax</p>
+          </div>
+          <p id="durationMusic" class="m-0">3:49</p>
+        </div>
+
+        <div
+          class="d-flex justify-content-center align-items-center mt-4 p-0 mb-4"
+          aria-describedby="Botões Da Música"
+        >
+          <div class="music-box__buttons-container me-5">
+            <img
+              id="btnPrev"
+              src="assets/prev-button.svg"
+              alt="Botão Voltar Música"
+            />
+            <img
+              id="btnPlay"
+              src="assets/play-button.svg"
+              alt="Botão Play Música"
+            />
+
+            <img
+              id="btnNext"
+              src="assets/next-button.svg"
+              alt="Botão Próxima Música"
+            />
+          </div>
+
+          <div class="music-box__volume-container d-flex align-items-center">
+            <img
+              src="assets/volume-button.svg"
+              alt="Botão Volume"
+              class="pe-2"
+              id="btnVolume"
+            />
+            <input
+              type="range"
+              id="volumeRange"
+              class="music-box__volume-button"
+              value="100"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio
+      hidden
+      src="musicas/And-So-It-Begins-Inspired-By-Crush-Sometimes.mp3"
+      controls
+      id="audio"
+    ></audio>
+
+    <img
+      class="listening-music-background"
+      src="assets/girl1.svg"
+      alt="Imagem Garota Ouvindo Musica"
+    />
+
+    <script src="scripts/db.js"></script>
+    <script src="scripts/script.js"></script>
+    <script></script>
+  </body>
+</html>

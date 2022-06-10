@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--pink-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+:root {
+  --pink-color: #ffdede;
+  --gray-dark: #686767;
+  --gray-light-200: #fdf8f8;
+  --gray-light-400: #d9d9d9;
+}
+.border-radius-progress {
+  border-radius: 12px;
+}
+.music-box {
+  max-width: 600px;
+  width: 500px;
+  min-width: 250px;
+
+  box-shadow: -6px 7px 14px rgba(0, 0, 0, 0.25),
+    0px 2px 14px rgba(0, 0, 0, 0.05);
+  background-color: var(--gray-light-200);
+  z-index: 2;
+  padding: 10px 40px;
+  border-radius: 20px;
+}
+.music-box__buttons-container > * {
+  cursor: pointer;
+}
+.music-box__progress-container {
+  height: 10px;
+  width: 100%;
+  padding: 0px;
+
+  background-color: var(--gray-light-400);
+  cursor: pointer;
+}
+.music-box__progress {
+  width: 60%;
+  height: 100%;
+  background-color: var(--gray-dark);
+}
+.listening-music-background {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1;
+}
+
+/* input color */
+.music-box__volume-button {
+  overflow: hidden;
+  width: 80px;
+  -webkit-appearance: none;
+  background-color: var(--gray-light-400);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.music-box__volume-button::-webkit-slider-runnable-track {
+  height: 10px;
+  -webkit-appearance: none;
+  color: var(--gray-light-400);
+  margin-top: -1px;
+  border-radius: 12px;
+}
+
+.music-box__volume-button::-webkit-slider-thumb {
+  width: 10px;
+  -webkit-appearance: none;
+  height: 10px;
+
+  background: var(--gray-dark);
+  box-shadow: -80px 0 0 80px var(--gray-dark);
+  border-radius: 12px;
+}
+
+.music-box__volume-button::-moz-range-progress {
+  background-color: var(--gray-light-400);
+}
+.music-box__volume-button::-moz-range-track {
+  background-color: var(--gray-dark);
+}
+/* IE*/
+.music-box__volume-button::-ms-fill-lower {
+  background-color: var(--gray-light-400);
+}
+.music-box__volume-button::-ms-fill-upper {
+  background-color: var(--gray-dark);
+}
