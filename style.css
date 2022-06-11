@@ -23,12 +23,14 @@ body {
   --gray-light-200: #fdf8f8;
   --gray-light-400: #d9d9d9;
 }
+
 .border-radius-progress {
   border-radius: 12px;
 }
+
 .music-box {
   max-width: 600px;
-  width: 500px;
+  width: 600px;
   min-width: 250px;
 
   box-shadow: -6px 7px 14px rgba(0, 0, 0, 0.25),
@@ -36,11 +38,24 @@ body {
   background-color: var(--gray-light-200);
   z-index: 2;
   padding: 10px 40px;
-  border-radius: 20px;
+  border-radius: 30px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  transition: 0.4s;
 }
-.music-box__buttons-container > * {
+
+.music-box:hover {
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.music-box__buttons-container>* {
   cursor: pointer;
 }
+
 .music-box__progress-container {
   height: 10px;
   width: 100%;
@@ -49,11 +64,13 @@ body {
   background-color: var(--gray-light-400);
   cursor: pointer;
 }
+
 .music-box__progress {
   width: 0%;
   height: 100%;
   background-color: var(--gray-dark);
 }
+
 .listening-music-background {
   position: fixed;
   left: 0px;
@@ -61,7 +78,7 @@ body {
   z-index: 1;
 }
 
-/* input color */
+/* Some Browsers */
 .music-box__volume-button {
   overflow: hidden;
   width: 80px;
@@ -70,6 +87,7 @@ body {
   border-radius: 12px;
   cursor: pointer;
 }
+
 
 .music-box__volume-button::-webkit-slider-runnable-track {
   height: 10px;
@@ -80,25 +98,28 @@ body {
 }
 
 .music-box__volume-button::-webkit-slider-thumb {
-  width: 10px;
+  width: 0px;
   -webkit-appearance: none;
-  height: 10px;
-
-  background: var(--gray-dark);
+  height: 0px;
+  background: transparent;
   box-shadow: -80px 0 0 80px var(--gray-dark);
-  border-radius: 12px;
+
 }
 
+/* Firefox */
 .music-box__volume-button::-moz-range-progress {
   background-color: var(--gray-light-400);
 }
+
 .music-box__volume-button::-moz-range-track {
   background-color: var(--gray-dark);
 }
+
 /* IE*/
 .music-box__volume-button::-ms-fill-lower {
   background-color: var(--gray-light-400);
 }
+
 .music-box__volume-button::-ms-fill-upper {
   background-color: var(--gray-dark);
 }

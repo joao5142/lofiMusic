@@ -26,12 +26,11 @@ function playPauseMusic() {
 function loadMusic(music) {
   audioEl.src = music.url;
 
-  titleMusic.textContent = music.name;
+  titleMusic.textContent = music.name + "__by_" + music.author;
 
   durationMusic.textContent = audioEl.duration;
   musicDuration = audioEl.duration;
 
-  playPauseMusic();
   console.log(musicDuration);
 }
 function nextMusic() {
@@ -42,7 +41,9 @@ function nextMusic() {
   }
   isPlaying = false;
   loadMusic(musicas[indexMusic]);
+  playPauseMusic();
 }
+
 function prevMusic() {
   indexMusic--;
 
@@ -51,6 +52,7 @@ function prevMusic() {
   }
   isPlaying = false;
   loadMusic(musicas[indexMusic]);
+  playPauseMusic();
 }
 
 function setProgress(fullDuration, currentTime) {
@@ -86,8 +88,12 @@ volumeRange.addEventListener("input", (e) => {
   audioEl.volume = e.target.value / 100;
 });
 //progressContainer
-progressContainer.addEventListener("click", (e) => {
-  console.log(e.offsetX);
+progressContainer.addEventListener("click", function (e) {
+  //e.offsetX pega onde o mouse foi clicado e o offsetWidth com o this ,pega o tamanho do container progresso maior(quem ta chamando o evento)
+  let percentage = Math.floor((e.offsetX / this.offsetWidth) * 100);
+  let duration = audioEl.duration;
+
+  audioEl.currentTime = (percentage * duration) / 100;
 });
 
 loadMusic(musicas[indexMusic]);
