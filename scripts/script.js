@@ -12,6 +12,7 @@ const audioEl = document.getElementById("audio");
 let isPlaying = false;
 let musicDuration = "";
 let indexMusic = 0;
+
 //Functions
 function playPauseMusic() {
   if (isPlaying) {
@@ -25,13 +26,10 @@ function playPauseMusic() {
 }
 function loadMusic(music) {
   audioEl.src = music.url;
-
   titleMusic.textContent = music.name + "__by_" + music.author;
-
   durationMusic.textContent = audioEl.duration;
-  musicDuration = audioEl.duration;
 
-  console.log(musicDuration);
+  musicDuration = audioEl.duration;
 }
 function nextMusic() {
   indexMusic++;
@@ -58,12 +56,14 @@ function prevMusic() {
 function setProgress(fullDuration, currentTime) {
   let percentage = (currentTime / fullDuration) * 100;
   progress.style.width = `${percentage}%`;
-  //   console.log("POrcentagem : " + percentage);
 }
 
 // Listeners
+
+//click no botão de play
 btnPlay.addEventListener("click", playPauseMusic);
 
+//evento que é disparado sempre que há uma mudança no tempo da música(tocando)
 audioEl.addEventListener("timeupdate", (e) => {
   let currentTime = e.target.currentTime;
   let fullDuration = e.target.duration;
@@ -74,12 +74,11 @@ audioEl.addEventListener("timeupdate", (e) => {
   durationMusic.textContent = timeString;
 
   setProgress(fullDuration, currentTime);
-
-  //   console.log(audioEl.duration);
-  console.log(minutes + ":" + seconds);
 });
+//quando a música é finalizada
 audioEl.addEventListener("ended", nextMusic);
 
+//next e pre
 btnNext.addEventListener("click", nextMusic);
 btnPrev.addEventListener("click", prevMusic);
 
@@ -87,6 +86,7 @@ btnPrev.addEventListener("click", prevMusic);
 volumeRange.addEventListener("input", (e) => {
   audioEl.volume = e.target.value / 100;
 });
+
 //progressContainer
 progressContainer.addEventListener("click", function (e) {
   //e.offsetX pega onde o mouse foi clicado e o offsetWidth com o this ,pega o tamanho do container progresso maior(quem ta chamando o evento)
@@ -96,4 +96,5 @@ progressContainer.addEventListener("click", function (e) {
   audioEl.currentTime = (percentage * duration) / 100;
 });
 
+//Carregando a música  quando o script é carregado
 loadMusic(musicas[indexMusic]);
