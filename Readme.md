@@ -1,5 +1,5 @@
 <h1>Projeto LofiMusic</h1>
-<h4>🚀 Projeto Player de Músicas Lofi</h4>
+<h4>🚀 Projeto de player de músicas lofi</h4>
 
 <h2>🚧 Status do projeto</h2>
 <p>Concluído</p>
@@ -28,7 +28,7 @@
 <img margin-bottom="20px" src="assets/readme2.png">
 <img margin-bottom="20px" src="assets/readme1.png">
 
-<h4  style="display: inline_block">Visualização do site :</h4><a style="display: inline_block" target="blank" href="">Preview no Netlify</a>
+<h4  style="display: inline_block">Visualização do site :</h4><a style="display: inline_block" target="blank" href="https://mylofimusic.netlify.app/">Preview no Netlify</a>
 
 <h2>🧑🏻‍ Autor</h2>
 <p>Feito por João paulo</p>
