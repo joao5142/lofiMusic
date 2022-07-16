@@ -10,7 +10,6 @@
 <h3>Rodando a Aplicação</h3>
 <ul>
 	<li>Clone esse repositório(git clone)</li>
- 	<li>Instale as dependências(npm install)</li>
  	<li>Abra o arquivo index.html </li>
 </ul>
 
